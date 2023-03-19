@@ -18,7 +18,9 @@ https://denimb-note-taker.herokuapp.com/
 
 ## Screenshot
 
+![image](https://user-images.githubusercontent.com/120414766/226158939-90a4c414-8563-44b4-aaed-8373268ee54b.png)
 
+![image](https://user-images.githubusercontent.com/120414766/226158974-39012ff4-11be-40e5-8c70-3638fe167945.png)
 
 ## Installation
 
@@ -26,7 +28,7 @@ Clone repo, use npm i to install all dependencies
 
 ## Usage
 
-Click [Link](#Link) to use application
+Click [Link](#https://denimb-note-taker.herokuapp.com/) to use application
 
 ## Questions
 
