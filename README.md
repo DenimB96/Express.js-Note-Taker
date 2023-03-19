@@ -28,7 +28,7 @@ Clone repo, use npm i to install all dependencies
 
 ## Usage
 
-Click [Link](#https://denimb-note-taker.herokuapp.com/) to use application
+Click [Link](https://denimb-note-taker.herokuapp.com/) to go to deployed site and use application
 
 ## Questions
 
