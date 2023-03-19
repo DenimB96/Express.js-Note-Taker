@@ -4,7 +4,7 @@ const fs = require("fs");
 const { v4: uuidv4 } = require("uuid");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // Middleware
 app.use(express.json());
@@ -22,13 +22,17 @@ app.get("/notes", (req, res) => {
 
 // API routes
 app.get("/api/notes", (req, res) => {
-  const notesData = fs.readFileSync(path.join(__dirname, "/Develop/db/db.json"));
+  const notesData = fs.readFileSync(
+    path.join(__dirname, "/Develop/db/db.json")
+  );
   const notes = JSON.parse(notesData);
   res.json(notes);
 });
-
+// Posting new notes
 app.post("/api/notes", (req, res) => {
-  const notesData = fs.readFileSync(path.join(__dirname, "/Develop/db/db.json"));
+  const notesData = fs.readFileSync(
+    path.join(__dirname, "/Develop/db/db.json")
+  );
   const notes = JSON.parse(notesData);
 
   const newNote = {
@@ -38,19 +42,27 @@ app.post("/api/notes", (req, res) => {
   };
 
   notes.push(newNote);
-  fs.writeFileSync(path.join(__dirname, "/Develop/db/db.json"), JSON.stringify(notes));
+  fs.writeFileSync(
+    path.join(__dirname, "/Develop/db/db.json"),
+    JSON.stringify(notes)
+  );
   res.json(newNote);
 });
-
+// Delete function
 app.delete("/api/notes/:id", (req, res) => {
-  const notesData = fs.readFileSync(path.join(__dirname, "/Develop/db/db.json"));
+  const notesData = fs.readFileSync(
+    path.join(__dirname, "/Develop/db/db.json")
+  );
   let notes = JSON.parse(notesData);
 
   const noteId = req.params.id;
 
   notes = notes.filter((note) => note.id !== noteId);
 
-  fs.writeFileSync(path.join(__dirname, "/Develop/db/db.json"), JSON.stringify(notes));
+  fs.writeFileSync(
+    path.join(__dirname, "/Develop/db/db.json"),
+    JSON.stringify(notes)
+  );
 
   res.json({ message: "Note deleted" });
 });
